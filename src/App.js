@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Card } from 'react-bootstrap';
-import { emptyStatement } from '@babel/types';
+
 
 class App extends Component {
   constructor(props){
-    super();
+    super(props);
     this.state={
       displayName:' ',
       latitude:' ', 
@@ -23,7 +23,7 @@ class App extends Component {
   SubmitForm=async (e)=>{
     e.preventDefault();// to not relode the page
     try{
-    let axiResponse=await axios.get(`https://eu1.locationiq.com/v1/search.php?key=pk.54c5bcb87e24270823ee985ff91c6f9c&city=${this.state.displayName} &format=json`)
+    let axiResponse=await axios.get(`https://eu1.locationiq.com/v1/search.php?key=pk.54c5bcb87e24270823ee985ff91c6f9c&city=${this.state.displayName} &format=json`);
 
   
 
