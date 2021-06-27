@@ -91,3 +91,18 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ## Credit and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+
+
+
+
+Name of feature: lab6
+
+Estimate of time needed to complete:3 hours
+
+Start time: 2:45
+
+Finish time: 7
+
+Actual time needed to complete:4 hour
+
+
