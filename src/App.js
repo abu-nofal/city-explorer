@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Card } from 'react-bootstrap';
+import { emptyStatement } from '@babel/types';
 
 class App extends Component {
   constructor(props){
@@ -9,7 +10,8 @@ class App extends Component {
       displayName:' ',
       latitude:' ', 
       longitude: ' ' ,
-      imgMap: ' ' 
+      imgMap: ' ' ,
+      show : false
     }
   }
   HandleDisplayName=(e)=>{
@@ -23,11 +25,12 @@ class App extends Component {
 
   
 
-    // console.log(axiResponse)
+    console.log(axiResponse)
     this.setState({ //to change the state of the propertes ,and change them with 
       displayName:axiResponse.data[0].display_name,
       latitude:axiResponse.data[0].lat,
-      longitude : axiResponse.data[0].lon
+      longitude : axiResponse.data[0].lon,
+      show :!this.state.show
       
 
 
@@ -40,12 +43,11 @@ class App extends Component {
     return (
       <div>
         <form onSubmit={(e)=>{this.SubmitForm(e)}}>
-          <input type='text' onChange={(e)=>{this.HandleDisplayName(e)}} required/> 
+          <input type='text' onChange={(e)=>{this.HandleDisplayName(e)}} /> 
           <button >Explore!</button>
         </form>
         
-
-
+        { this.state.show &&
               <Card style={{ width: '18rem' }}>
         
         <Card.Body>
@@ -55,11 +57,13 @@ class App extends Component {
            latitude:   {this.state.latitude}<br/>
           longitude:  {this.state.longitude }
           </Card.Text>
-          <Card.Img variant="top" src={`https://maps.locationiq.com/v3/staticmap?key=pk.54c5bcb87e24270823ee985ff91c6f9c&center=${this.state.latitude},${this.state.longitude}&zoom=12&format=png`} width='300px' height='300px' />
+          <Card.Img variant="top" src={`https://maps.locationiq.com/v3/staticmap?key=pk.54c5bcb87e24270823ee985ff91c6f9c&center=${this.state.latitude},${this.state.longitude}&zoom=18&format=png`} width='300px' height='300px' />
         </Card.Body>
-      </Card>
+      </Card>  
       
-          
+    }
+    
+   
           
 
         
