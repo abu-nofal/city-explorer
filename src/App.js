@@ -10,7 +10,7 @@ class App extends Component {
       displayName:' ',
       latitude:' ', 
       longitude: ' ' ,
-      imgMap: ' ' ,
+      
       show : false
     }
   }
