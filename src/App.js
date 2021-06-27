@@ -27,7 +27,7 @@ class App extends Component {
 
   
 
-    console.log(axiResponse)
+   
     this.setState({ //to change the state of the propertes ,and change them with 
       displayName:axiResponse.data[0].display_name,
       latitude:axiResponse.data[0].lat,
