@@ -11,7 +11,8 @@ class App extends Component {
       latitude:' ', 
       longitude: ' ' ,
       
-      show : false
+      show : false,
+      error:''
     }
   }
   HandleDisplayName=(e)=>{
@@ -21,6 +22,7 @@ class App extends Component {
   }
   SubmitForm=async (e)=>{
     e.preventDefault();// to not relode the page
+    try{
     let axiResponse=await axios.get(`https://eu1.locationiq.com/v1/search.php?key=pk.54c5bcb87e24270823ee985ff91c6f9c&city=${this.state.displayName} &format=json`)
 
   
@@ -30,15 +32,18 @@ class App extends Component {
       displayName:axiResponse.data[0].display_name,
       latitude:axiResponse.data[0].lat,
       longitude : axiResponse.data[0].lon,
-      show :!this.state.show
-      
+      show :!this.state.show,
+      error:''
+           })
+          }
+          catch{
+            this.setState({
+              error:'Error map not found'
+            })
+          }
 
 
-    })
-    
-
-
-  }
+     }
   render() {
     return (
       <div>
@@ -61,6 +66,9 @@ class App extends Component {
         </Card.Body>
       </Card>  
       
+    }
+    {
+    <p>{this.state.error}</p>
     }
     
    
