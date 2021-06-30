@@ -106,3 +106,12 @@ Finish time: 7
 Actual time needed to complete:4 hour
 
 
+Name of feature: lab8
+
+Estimate of time needed to complete:4 hours
+
+Start time: 3:45
+
+Finish time: 8:30
+
+Actual time needed to complete:5 hour

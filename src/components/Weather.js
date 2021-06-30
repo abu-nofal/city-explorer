@@ -1,12 +1,18 @@
 import React, { Component } from 'react'
+import WeatherDay from './WeatherDay'
 
 class Weather extends Component {
     render() {
         return (
-            <div style={{textAlign:'center'}}>
-                <h2 >{this.props.desc}</h2>
-                <h2>{this.props.date}</h2>
-            </div>
+            < >
+
+            
+               
+                <WeatherDay weatherData={this.props.weatherData}/>
+               
+            
+    
+            </>
         )
     }
 }
